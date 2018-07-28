@@ -1,0 +1,28 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    margin: 1px;
+    font-weight: bold;
+    color: white;
+}
+.add-button {
+    background: dodgerblue;
+}
+.todo-button {
+    background: lightseagreen;
+}
+.todo-button:hover {
+    background: lightgreen;
+}
+input {
+    font-size: 40px;
+    color: lightslategrey;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid gray;
+}

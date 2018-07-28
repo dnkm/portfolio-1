@@ -1,0 +1,23 @@
+.calendar {
+    border: 5px solid gold;
+    display: flex;
+    flex-wrap: wrap;
+    background: skyblue;
+}
+
+.calendar h1 {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.calendar .day {
+    width: calc(100% / 7);
+    height: 40px;
+    background: beige;
+    border: 1px solid black;
+    margin: -1px 0 0 -1px;
+    box-sizing: border-box;
+    flex-grow: 1;
+}

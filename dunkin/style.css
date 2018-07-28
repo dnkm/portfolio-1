@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+}
+
+.top-row {
+    background: #663600;
+    color: white;
+    height: 20px;
+    font-size: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+.top-row .left {
+    display: flex;
+    align-items: center;
+}
+.top-row .left div {
+    margin-right: 5px;
+} 
+.top-row .left button {
+    height: 15px;
+    font-size: 10px;
+    background: transparent;
+    color: white;
+    border-radius: 2px;
+}
+.top-row .left button.on {
+    background: rgba(200, 200, 200, 0.5);
+}
+.top-row .right {
+}
+
+.top-nav {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    box-shadow: 0 1px 5px gray;
+    text-transform: uppercase;
+}
+.top-nav img {
+    height: 80%;
+}
+.top-nav img:first-child:hover {
+    transform: scale(1.15);
+    background: hotpink;
+    transition: all 1s;
+}
+
+.main-row1 {
+    height: 100px;
+    background: url('https://dunkindonuts.com/content/dam/dd/img/heros-lifestyle/standard/hero-dashboard-perks-640x400.png');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 0 0 1px lightgray;
+}
+.main-row1 h1 {
+    margin: 0;
+}
+
+.main-row2 img {
+    height: 100px;
+    transition: all 1s;
+}
+
+.main-row2 img:nth-child(1):hover {
+    transform: translateX(5px);
+    
+}
+.main-row2 img:nth-child(2):hover {
+    transform: scale(1.2);
+}
+.main-row2 img:nth-child(3):hover {
+    transform: rotate(0.3turn);
+}
