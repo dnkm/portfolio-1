@@ -1,7 +1,8 @@
 class AnimalSaga {
     constructor() {
         this.SIZE = 9;
-        this.blocks = ['🐶', '🐱', '🦄', '🐹', '🐸', '🦊', '🐻', '🦋'];
+        // this.blocks = ['🐶', '🐱', '🦄', '🐹', '🐸', '🦊', '🐻', '🦋'];
+        this.blocks = ['🐶', '🐱', '🦄'];
         this.container = document.querySelector(".game");
         this.board = [];
         this.locked = false;
@@ -41,7 +42,7 @@ class AnimalSaga {
         this.locked = true;
         this.remove(this.board[r][c], r, c);
         this.render();
-        setTimeout(this.fall.bind(this), 1000);
+        this.fall();
     }
     fall() {
         // make 'em fall
@@ -50,6 +51,8 @@ class AnimalSaga {
                 if (this.board[r][c] === '') {
                     this.board[r][c] = this.board[r-1][c];
                     this.board[r-1][c] = '';
+
+                    this.animate(r-1, c);
                 }
             }
         }
@@ -62,14 +65,16 @@ class AnimalSaga {
             }
         }
 
+        setTimeout(this.render.bind(this), 500);
+
         // check if there are still 0s
         if (this.doesZeroExist()) {
-            setTimeout(this.fall.bind(this), 1000);
+            setTimeout(this.fall.bind(this), 500);
         } else {
             this.locked = false;
         }
 
-        this.render();
+        
     }
     doesZeroExist() {
         for (let r = 0; r < this.SIZE; r++) {
@@ -91,8 +96,16 @@ class AnimalSaga {
         this.remove(blockType, r, c - 1);
         this.remove(blockType, r, c + 1);
     }
+    animate(r, c) {
+        let btn = document.querySelectorAll("button")[r*this.SIZE+c];
+        console.log(btn);
+        btn.style.animation = "fall linear  0.5s";
+
+        setTimeout(() => {
+            btn.style.animation = "";
+        }, 550);
+    }
 }
 
-// https://github.com/dnkm/portfolio-1
 
 new AnimalSaga().render();
