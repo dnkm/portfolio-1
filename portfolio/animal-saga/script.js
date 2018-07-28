@@ -72,7 +72,7 @@ class AnimalSaga {
         this.render();
     }
     doesZeroExist() {
-        for (let r = this.SIZE - 1; r >= 1; r--) {
+        for (let r = 0; r < this.SIZE; r++) {
             for (let c = 0; c < this.SIZE; c++) {
                 if (this.board[r][c] === '') return true;
             }
@@ -93,5 +93,6 @@ class AnimalSaga {
     }
 }
 
+// https://github.com/dnkm/portfolio-1
 
 new AnimalSaga().render();
